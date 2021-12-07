@@ -27,7 +27,7 @@ export function MoviesGrid({ search }) {
       : "/films?page=" + page;
     get(searchUrl).then((data) => {
       setMovies((prevMovies) => prevMovies.concat(data.content));
-      setHasMore(data.page < data.total_pages);
+      setHasMore(data.thisPage < data.totalPages);
       // setMovies(data.results);
       setIsLoading(false);
     });

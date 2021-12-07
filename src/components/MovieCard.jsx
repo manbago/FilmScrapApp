@@ -4,7 +4,7 @@ import styles from "./MovieCard.module.css";
 import { getMovieImg } from "../utils/getMovieImg";
 
 export function MovieCard({ movie }) {
-  const imageURL = getMovieImg(movie.poster_path, 300);
+  const imageURL = getMovieImg(movie.imagen, 300);
   return (
     <li className={styles.movieCard}>
       <Link to={"/movies/" + movie.id}>
