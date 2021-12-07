@@ -12,7 +12,7 @@ export function MovieDetails() {
 
   useEffect(() => {
     setIsLoading(true);
-    get("/movie/" + movieId).then((data) => {
+    get("/films/" + movieId).then((data) => {
       setMovie(data);
       setIsLoading(false);
     });
@@ -26,7 +26,7 @@ export function MovieDetails() {
     return null;
   }
 
-  const imageUrl = getMovieImg(movie.poster_path, 500);
+  const imageUrl = getMovieImg(movie.imagen, 500);
   return (
     <div className={styles.detailsContainer}>
       <img
@@ -39,11 +39,11 @@ export function MovieDetails() {
           <strong>Title:</strong> {movie.title}
         </p>
         <p>
-          <strong>Genres:</strong>{" "}
-          {movie.genres.map((genre) => genre.name).join(", ")}
+          <strong>Año:</strong>{movie.releaseYear}
+          {/* {movie.releaseYear.map((genre) => genre.releaseYear).join(", ")} */}
         </p>
         <p>
-          <strong>Description:</strong> {movie.overview}
+          <strong>Description:</strong> {movie.description}
         </p>
       </div>
     </div>
