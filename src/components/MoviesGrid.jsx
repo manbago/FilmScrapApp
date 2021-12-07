@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-// import { useLocation } from "react-router";
-// import { useQuery } from "../hooks/useQuery"
 import { get } from "../utils/httpClient";
 import { MovieCard } from "./MovieCard";
 import styles from "./MoviesGrid.module.css";
@@ -21,13 +19,14 @@ export function MoviesGrid({ search }) {
   // const location = useLocation();
   // console.log(location.search);
 
+
   useEffect(() => {
     // setIsLoading(true);
     const searchUrl = search
       ? "/search/movie?query=" + search + "&page=" + page
-      : "/discover/movie?page=" + page;
+      : "/films?page=" + page;
     get(searchUrl).then((data) => {
-      setMovies((prevMovies) => prevMovies.concat(data.results));
+      setMovies((prevMovies) => prevMovies.concat(data.content));
       setHasMore(data.page < data.total_pages);
       // setMovies(data.results);
       setIsLoading(false);
@@ -35,13 +34,13 @@ export function MoviesGrid({ search }) {
   }, [search, page]);
   // }, []);
 
+
+
   if (!isLoading && movies.length === 0) {
     return <Empty />;
   }
 
-  // if (isLoading) {
-  //     return <Spinner />;
-  //   }
+
 
   return (
     <InfinityScroll
