@@ -39,12 +39,29 @@ export function MovieDetails() {
           <strong>Title:</strong> {movie.title}
         </p>
         <p>
-          <strong>Año:</strong>{movie.releaseYear}
-          {/* {movie.releaseYear.map((genre) => genre.releaseYear).join(", ")} */}
+          <strong>Año:</strong> {movie.releaseYear}
         </p>
         <p>
-          <strong>Description:</strong> {movie.description}
+          <strong>Description:</strong>{" "}
+          {movie.description.replace("Descripción:", "")}
         </p>
+        <p>
+          <strong>Actores:</strong> {movie.playersFilm.replace("Actores:", "")}
+        </p>
+        <p>
+          <strong>Formato:</strong> {movie.format.replace("Formato:", "")}
+        </p>
+        <p>
+          <strong>Tamaño:</strong> {movie.size.replace("Tamaño:", "")}
+        </p>
+        <a
+          className={styles.miboton}
+          href={movie.torrent}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Download
+        </a>
       </div>
     </div>
   );

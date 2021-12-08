@@ -13,11 +13,5 @@
 const API = "http://localhost:3000/api";
 
 export function get(path) {
-  return fetch(API + path, {
-    // headers: {
-    //   Authorization:
-
-    //  },
-  }).then((result) => result.json());
+  return fetch(API + path, {}).then((result) => result.json());
 }
-

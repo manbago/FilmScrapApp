@@ -10,14 +10,10 @@ export function App() {
         <Link to="/">
           <h1 className={styles.title}>Movies TRON</h1>
         </Link>
-        {/* <Link to="/">Home</Link>
-        <br />
-        <Link to="/movie">Movie</Link> */}
       </header>
       <main>
         <Routes>
           <Route exact path="/movies/:movieId" element={<MovieDetails />} />
-          {/* <Route exact path="/movie"  element={LandingPage} /> */}
           <Route exact path="/" element={<LandingPage />} />
           <Route path="/">404</Route>
         </Routes>

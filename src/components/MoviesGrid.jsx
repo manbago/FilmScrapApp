@@ -9,38 +9,23 @@ import { Empty } from "./Empty";
 export function MoviesGrid({ search }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [hasmore, setHasMore] = useState(true);
 
-  // const query = useQuery();
-  // const search = query.get("search");
-
-  // console.log(search);
-  // const location = useLocation();
-  // console.log(location.search);
-
-
   useEffect(() => {
-    // setIsLoading(true);
     const searchUrl = search
-      ? "/search/movie?query=" + search + "&page=" + page
+      ? "/films/search?term=" + search + "&page=" + page
       : "/films?page=" + page;
     get(searchUrl).then((data) => {
       setMovies((prevMovies) => prevMovies.concat(data.content));
       setHasMore(data.thisPage < data.totalPages);
-      // setMovies(data.results);
       setIsLoading(false);
     });
   }, [search, page]);
-  // }, []);
-
-
 
   if (!isLoading && movies.length === 0) {
     return <Empty />;
   }
-
-
 
   return (
     <InfinityScroll
