@@ -43,16 +43,16 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Description:</strong>{" "}
-          {movie.description.replace("Descripción:", "")}
+          {movie.description}
         </p>
         <p>
-          <strong>Actores:</strong> {movie.playersFilm.replace("Actores:", "")}
+          <strong>Actores:</strong> {movie.playersFilm}
         </p>
         <p>
-          <strong>Formato:</strong> {movie.format.replace("Formato:", "")}
+          <strong>Formato:</strong> {movie.format}
         </p>
         <p>
-          <strong>Tamaño:</strong> {movie.size.replace("Tamaño:", "")}
+          <strong>Tamaño:</strong> {movie.size}
         </p>
         <a
           className={styles.miboton}

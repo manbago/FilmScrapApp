@@ -15,7 +15,7 @@ export function MovieCard({ movie }) {
           src={imageURL}
           alt={movie.title}
         />
-        <div>{movie.title}</div>
+        <div>{movie.title} - {movie.format}</div>
       </Link>
     </li>
   );
