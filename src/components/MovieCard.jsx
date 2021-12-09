@@ -15,7 +15,8 @@ export function MovieCard({ movie }) {
           src={imageURL}
           alt={movie.title}
         />
-        <div>{movie.title} - {movie.format}</div>
+        <p className={styles.formatCard}>{movie.format}</p>
+        <div>{movie.title}</div>
       </Link>
     </li>
   );

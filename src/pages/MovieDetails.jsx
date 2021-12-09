@@ -34,6 +34,8 @@ export function MovieDetails() {
         src={imageUrl}
         alt={movie.title}
       />
+      
+      
       <div className={`${styles.col} ${styles.movieDetails}`}>
         <p className={styles.firstItem}>
           <strong>Title:</strong> {movie.title}
@@ -49,7 +51,7 @@ export function MovieDetails() {
           <strong>Actores:</strong> {movie.playersFilm}
         </p>
         <p>
-          <strong>Formato:</strong> {movie.format}
+          <strong>Formato:</strong><span className={styles.formatCard}>{movie.format}</span>
         </p>
         <p>
           <strong>Tamaño:</strong> {movie.size}

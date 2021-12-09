@@ -13,7 +13,22 @@
 
 .movieImage {
   border-radius: 15px;
+  width:230PX;
+  height: 345px;
+
 }
+
+.formatCard {
+
+  background-color:red;
+  color:white;
+  border: 2px solid white;
+  font-size: 0.75em;
+  margin-left: 8px;
+  padding: 1px 6px 1px;
+
+}
+
 
 .movieDetails {
   font-size: 1.5em;
