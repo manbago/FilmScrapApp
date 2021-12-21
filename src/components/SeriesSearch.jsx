@@ -7,7 +7,7 @@ export function SeriesSearch() {
   const history = useNavigate();
 
   const query = useQuery2();
-  const search2 = query.get("search");
+  const search = query.get("search");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,13 +20,13 @@ export function SeriesSearch() {
           className={styles.searchImput}
           autoFocus={true}
           type="text"
-          value={search2 ?? ""}
+          value={search ?? ""}
           placeholder="Title Serie"
           aria-label="Search Series"
           onChange={(e) => {
             const value = e.target.value;
             // setSearchText(value);
-            history("/?search=" + value);
+            history("/series/?search=" + value);
           }}
         />
         <FaSearch size={20} color="black" className={styles.searchButton} />

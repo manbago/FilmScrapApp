@@ -13,5 +13,6 @@
 const API = "http://localhost:3000/api";
 
 export function get(path) {
-  return fetch(API + path, {}).then((result) => result.json());
+  console.log("mira"+ API + path);
+  return fetch(API + path , {}).then((result) => result.json());
 }

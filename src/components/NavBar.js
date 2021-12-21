@@ -11,7 +11,7 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            CodeBucks
+            ManbaSrapt
             <i className="fas fa-code"></i>
           </NavLink>
 
@@ -24,18 +24,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                About
+                Pelis
               </NavLink>
             </li>
             <li className="nav-item">
@@ -47,6 +36,28 @@ function NavBar() {
                 onClick={handleClick}
               >
                 Series
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/documentales"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Docs
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/about"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                About
               </NavLink>
             </li>
             <li className="nav-item">

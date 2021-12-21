@@ -7,5 +7,6 @@ export function useQuery(){
 
 // Hook
 export function useQuery2(){
-    return new URLSearchParams(useLocation().search2);
+    console.log(useLocation().search);
+    return new URLSearchParams(useLocation().search);
 }
