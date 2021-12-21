@@ -1,5 +1,5 @@
-import styles from "./App.module.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MovieDetails } from "./pages/MovieDetails";
 import { SerieDetails } from "./pages/SerieDetails";
 import { LandingPage } from "./pages/LandingPage";
@@ -13,9 +13,6 @@ export function App() {
     <Router>
       <header>
       <NavBar />
-        <Link to="/">
-          <h1 className={styles.title}>Movies TRON</h1>
-        </Link>
       </header>
       <main>
         <Routes>

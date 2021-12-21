@@ -10,6 +10,7 @@ export function SerieDetails() {
   const [isLoading, setIsLoading] = useState(true);
   const [serie, setSerie] = useState(null);
 
+
   useEffect(() => {
     setIsLoading(true);
     get("/series/" + serieId).then((data) => {
@@ -25,6 +26,8 @@ export function SerieDetails() {
   if (!serie) {
     return null;
   }
+
+  const array = serie.episodios.split(",");
 
   const imageUrl = getMovieImg(serie.imagen, 500);
   return (
@@ -53,23 +56,69 @@ export function SerieDetails() {
           <strong>Formato:</strong><span className={styles.formatCard}>{serie.format}</span>
         </p>
         <p>
-          <strong>Episodios:</strong> {serie.episodios}
+          <strong>Episodios:</strong> {serie.episodios.length} {array.length}
         </p>
  
-         {/* <table>
+          <table>
           <thead>
             <tr>  <th>Capítulo</th> <th>Duración</th> <th>Fecha de estreno</th> </tr>
           </thead>
           <tbody>
-            {serie.episodios.map((episode) => (
+            {array.map((episode) => (
               <tr >
-                <td>{serie.episode}</td>
-                <td>{episode}</td>
+
                 <td>{episode}</td>
               </tr>
             ))}
           </tbody>
-        </table>  */}
+        </table>  
+
+        <table>
+          <thead>
+            <tr>  <th>Capítulo</th> <th>Duración</th> <th>Fecha de estreno</th> </tr>
+          </thead>
+          <tbody>
+           
+              <tr >
+
+                <td>{array[0]}</td>
+                <td>{array[1]}</td>
+                <td>{array[2]}</td>
+              </tr>
+              <tr >
+                <td>{array[4]}</td>
+                <td>{array[5]}</td>
+                <td>{array[6]}</td>
+              </tr>
+              <tr >
+                <td>{array[8]}</td>
+                <td>{array[9]}</td>
+                <td>{array[10]}</td>
+              </tr>
+              <tr >
+                <td>{array[12]}</td>
+                <td>{array[13]}</td>
+                <td>{array[14]}</td>
+              </tr>
+              <tr >
+                <td>{array[16]}</td>
+                <td>{array[17]}</td>
+                <td>{array[18]}</td>
+              </tr>
+              <tr >
+                <td>{array[20]}</td>
+                <td>{array[21]}</td>
+                <td>{array[22]}</td>
+              </tr>
+           
+          </tbody>
+        </table> 
+
+       
+
+
+
+
         <a
           className={styles.miboton}
           href={serie.torrent}
