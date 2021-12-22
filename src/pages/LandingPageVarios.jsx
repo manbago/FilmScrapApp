@@ -1,10 +1,10 @@
-import { DocsGrid } from "../components/DocsGrid";
-import { DocSearch } from "../components/DocSearch";
+import { VariosGrid } from "../components/VariosGrid";
+import { VariosSearch } from "../components/VariosSearch";
 import { useQuery } from "../hooks/useQuery";
 import { useDebounce } from "../hooks/useDebounce";
 import styles from "../App.module.css";
 
-export function LandingPageDocs() {
+export function LandingPageVarios() {
   const query = useQuery();
   const search = query.get("search");
 
@@ -12,9 +12,9 @@ export function LandingPageDocs() {
 
   return (
     <div>
-      <h1 className={styles.title}>Documentales TRON</h1>
-      <DocSearch />
-      <DocsGrid key={debouncedSearch} search={debouncedSearch} />
+      <h1 className={styles.title}>Variados TRON</h1>
+      <VariosSearch />
+      <VariosGrid key={debouncedSearch} search={debouncedSearch} />
     </div>
   );
 }
